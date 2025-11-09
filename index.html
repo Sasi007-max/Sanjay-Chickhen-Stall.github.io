@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sanjay Chicken Stall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <meta name="description" content="Sanjay Chicken Stall — fresh, spicy and delicious chicken snacks.">
+  <style>
+    :root{--bg:#fff8f2;--accent:#d9534f;--dark:#2b2b2b;--muted:#6b6b6b}
+    *{box-sizing:border-box}
+    body{font-family:Roboto,system-ui,-apple-system,Segoe UI,Arial;line-height:1.45;margin:0;background:var(--bg);color:var(--dark)}
+    header{background:linear-gradient(90deg,rgba(0,0,0,0.25),rgba(0,0,0,0)), url('https://images.unsplash.com/photo-1604908177522-7b9db7f7b8e1?auto=format&fit=crop&w=1400&q=60') center/cover no-repeat; color:white;padding:28px 20px}
+    .container{max-width:1100px;margin:0 auto;padding:0 18px}
+    .topbar{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-weight:700;font-family:Montserrat}
+    nav{display:flex;gap:12px}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;font-weight:600}
+    .hero{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:32px 0}
+    .hero .left{flex:1 1 320px}
+    .hero h1{font-family:Montserrat;font-size:clamp(28px,4vw,46px);margin:0 0 10px}
+    .lead{background:rgba(255,255,255,0.06);display:inline-block;padding:8px 12px;border-radius:8px;margin-bottom:12px}
+    .cta{display:inline-block;background:var(--accent);color:white;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;margin-right:10px}
+    .secondary{background:transparent;border:2px solid rgba(255,255,255,0.2);color:white;padding:10px 14px;border-radius:10px;text-decoration:none}
+    main{padding:28px 0}
+    .section{padding:28px 0}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .card{background:white;border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .menu-title{display:flex;align-items:center;justify-content:space-between;margin:10px 0 6px}
+    .price{color:var(--accent);font-weight:700}
+    .about{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:center}
+    .small-card{background:#fff;border-radius:10px;padding:12px;box-shadow:0 4px 12px rgba(0,0,0,0.04)}
+    footer{padding:18px 0;color:var(--muted)}
+    .flex{display:flex;gap:12px;align-items:center}
+    /* responsive nav */
+    .menu-toggle{display:none;background:rgba(255,255,255,0.12);border:none;color:white;padding:8px 10px;border-radius:8px}
+    @media(max-width:800px){
+      nav{display:none;flex-direction:column;background:transparent;gap:8px}
+      .menu-toggle{display:inline-block}
+      .about{grid-template-columns:1fr}
+    }
+    /* small utilities */
+    .muted{color:var(--muted)}
+    .tag{display:inline-block;background:#fff2f2;color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:700}
+    .order-btn{display:inline-block;background:var(--accent);color:white;padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:700}
+    .contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:10px}
+    .contact-form button{background:var(--accent);color:white;padding:10px 12px;border-radius:8px;border:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo">SC</div>
+          <div>
+            <div style="font-weight:700">Sanjay Chicken Stall</div>
+            <div class="muted" style="font-size:13px">Fresh • Spicy • Homemade</div>
+          </div>
+        </div>
+        <div>
+          <button class="menu-toggle" onclick="toggleNav()">Menu</button>
+          <nav id="nav">
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="hero">
+        <div class="left">
+          <div class="lead">Open today • 10:00 — 22:00</div>
+          <h1>Finger-licking chicken, made the home way.</h1>
+          <p class="muted">Sanjay Chicken Stall serves freshly fried and spicy marinated chicken. Try our bestselling masala chicken and butter grilled tikka.</p>
+          <p style="margin-top:14px">
+            <a class="cta" href="#menu">See Menu</a>
+            <a class="secondary" href="#contact">Place Order</a>
+          </p>
+        </div>
+        <div style="flex:0 0 320px">
+          <div class="small-card">
+            <div style="font-weight:700;margin-bottom:6px">Today's Special</div>
+            <div class="muted">Masala Fried Chicken</div>
+            <div style="margin-top:8px;font-size:18px;font-weight:700;color:var(--accent)">₹120 / piece</div>
+            <div style="margin-top:10px"><a class="order-btn" href="#contact">Order Now</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="menu" class="section">
+      <h2 style="margin:0 0 12px">Menu</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1604908177420-8d1d3a9a2b47?auto=format&fit=crop&w=800&q=60" alt="Masala Chicken">
+          <div class="menu-title"><div>Masala Fried Chicken</div><div class="price">₹120</div></div>
+          <div class="muted">Crispy, spicy and tangy. Served hot.</div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1604908177522-7b9db7f7b8e1?auto=format&fit=crop&w=800&q=60" alt="Tikka">
+          <div class="menu-title"><div>Butter Tikka</div><div class="price">₹160</div></div>
+          <div class="muted">Soft, buttery pieces with smoky char.</div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1617191513524-6f9f5e9af4e9?auto=format&fit=crop&w=800&q=60" alt="Chicken Roll">
+          <div class="menu-title"><div>Chicken Roll</div><div class="price">₹90</div></div>
+          <div class="muted">Roll with salad and our secret sauce.</div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=60" alt="Wings">
+          <div class="menu-title"><div>Spicy Wings (4 pcs)</div><div class="price">₹180</div></div>
+          <div class="muted">Hot wings coated in house spice mix.</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2 style="margin:0 0 12px">About Us</h2>
+      <div class="about">
+        <div>
+          <p>Sanjay Chicken Stall started as a small roadside stall focusing on flavor and punctual service. We use fresh ingredients, traditional marination and quick frying to keep taste consistent.</p>
+          <ul>
+            <li>Fresh daily</li>
+            <li>No preservatives</li>
+            <li>Family recipes</li>
+          </ul>
+        </div>
+        <aside>
+          <div class="small-card">
+            <div style="font-weight:700">Address</div>
+            <div class="muted" style="font-size:14px;margin-top:6px">Near Market Road, Block A, Your City</div>
+            <div style="margin-top:8px"><strong>Phone:</strong> +91 98765 43210</div>
+            <div style="margin-top:8px"><span class="tag">Pickup • Dine-in</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2 style="margin:0 0 12px">Contact / Place Order</h2>
+      <div style="display:grid;grid-template-columns:1fr 320px;gap:18px">
+        <form class="contact-form" onsubmit="event.preventDefault();alert('Order sent (demo) — Customize backend to make it functional');">
+          <input required placeholder="Your name">
+          <input required placeholder="Phone or WhatsApp">
+          <input placeholder="What would you like to order? (e.g. 2 Masala Chicken)">
+          <textarea placeholder="Any instructions (spice level, pickup time)" rows="4"></textarea>
+          <button type="submit">Send Order</button>
+        </form>
+        <div>
+          <div class="small-card">
+            <div style="font-weight:700">Opening Hours</div>
+            <div class="muted" style="margin-top:6px">Mon - Sun: 10:00 — 22:00</div>
+            <div style="margin-top:12px">Or call / WhatsApp to place a quick order.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div class="muted">© <span id="year"></span> Sanjay Chicken Stall</div>
+        <div class="muted">Made with ❤️ • Demo site for GitHub Pages</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function toggleNav(){const n=document.getElementById('nav');n.style.display = (n.style.display==='flex')? 'none':'flex'}
+  </script>
+</body>
+</html>
